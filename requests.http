@@ -1,9 +1,13 @@
 ### Get all movies
-
 GET http://localhost:3000/movies
 
-### Create a new movie
+### Get movie by ID
+GET http://localhost:3000/movies/1
 
+### Movie that does not exist
+GET http://localhost:3000/movies/999
+
+### Create a new movie
 POST http://localhost:3000/movies
 Content-Type: application/json
 
@@ -12,3 +16,22 @@ Content-Type: application/json
   "director": "Ridley Scott",
   "year": 1982
 }
+
+### Invalid movie
+POST http://localhost:3000/movies
+Content-Type: application/json
+
+{
+  "director": "Nobody"
+}
+
+### Update a movie
+PATCH http://localhost:3000/movies/1
+Content-Type: application/json
+
+{
+  "year": 2011
+}
+
+### Delete a movie
+DELETE http://localhost:3000/movies/1
